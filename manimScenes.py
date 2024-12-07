@@ -1,12 +1,16 @@
 # Scenes
 from definitions import *
+from init import *
+from manimlib import *
 
+
+# Manim scenes
 class TwoBP(Scene):
   def construct(self, sim_time, dt, run_time, animate=True, savefile=None):
     CelestialBody.initBodies(twoBP)
     
     # Solving using RK4
-    [positions, velocities] = CelestialBody.solve_RK4(sim_time, dt)
+    [positions, velocities] = CelestialBody.createSim(sim_time, dt)
 
     # Saving results
     if(savefile is not None):
@@ -21,7 +25,7 @@ class TwoBP(Scene):
       
       curves = VGroup()
       for i in range(len(CelestialBody.bodies)):
-        curve = VMobject().set_points_as_corners(positions[:,:,i])
+        curve = VMobject().set_points_as_corners(positions[:,i])
         curve.set_stroke(CelestialBody.bodies[i].getColor())
         curves.add(curve)
       
@@ -56,7 +60,7 @@ class SolarSystem(Scene):
   def construct(self, sim_time, dt, run_time, animate=True, savefile=None):
     CelestialBody.initBodies(solarSystem)
     
-    [positions, velocities] = CelestialBody.solve_RK4(sim_time, dt)
+    [positions, velocities] = CelestialBody.createSim(sim_time, dt)
 
     # Saving results
     if(savefile is not None):
@@ -66,7 +70,7 @@ class SolarSystem(Scene):
     if(animate):
       curves = VGroup()
       for i in range(len(CelestialBody.bodies)):
-        curve = VMobject().set_points_as_corners(positions[:,:,i])
+        curve = VMobject().set_points_as_corners(positions[:,i])
         curve.set_stroke(CelestialBody.bodies[i].getColor())
         curves.add(curve)
       
@@ -101,7 +105,7 @@ class Figure8(Scene):
   def construct(self, sim_time, dt, run_time, animate=True, savefile=None):
     CelestialBody.initBodies(figure8)
     
-    [positions, velocities] = CelestialBody.solve_RK4(sim_time, dt)
+    [positions, velocities] = CelestialBody.createSim(sim_time, dt)
 
     # Saving results
     if(savefile is not None):
@@ -111,7 +115,7 @@ class Figure8(Scene):
     if(animate):
       curves = VGroup()
       for i in range(len(CelestialBody.bodies)):
-        curve = VMobject().set_points_as_corners(positions[:,:,i])
+        curve = VMobject().set_points_as_corners(positions[:,i])
         curve.set_stroke(CelestialBody.bodies[i].getColor())
         curves.add(curve)
       
@@ -148,7 +152,7 @@ class OrbitingFig8(Scene):
   def construct(self, sim_time, dt, run_time, animate=True, savefile=None):
     CelestialBody.initBodies(orbitingFig8)
     
-    [positions, velocities] = CelestialBody.solve_RK4(sim_time, dt)
+    [positions, velocities] = CelestialBody.createSim(sim_time, dt)
     
     # Saving results
     if(savefile is not None):
@@ -158,7 +162,7 @@ class OrbitingFig8(Scene):
     if(animate):
       curves = VGroup()
       for i in range(len(CelestialBody.bodies)):
-        curve = VMobject().set_points_as_corners(positions[:,:,i])
+        curve = VMobject().set_points_as_corners(positions[:,i])
         curve.set_stroke(CelestialBody.bodies[i].getColor())
         curves.add(curve)
       

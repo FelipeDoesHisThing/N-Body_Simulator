@@ -1,7 +1,7 @@
 # The N-Body Simulator
 <p align="center">
   <a>
-    <img width = 800, src = "https://github.com/cfelipesandoval/N-Body_Simulator/blob/de6ad6de566236adcec073c5a103c80398c33889/images/Front_image.png"
+    <img width = 800, src = "https://github.com/cfelipesandoval/N-Body_Simulator/blob/65c4240f18254ae2f2b49eaaa304f51b38c835c5/images/Front_image.png"
   </a>
 </p>
 

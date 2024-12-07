@@ -1,6 +1,8 @@
 from definitions import *
 from init import *
-# from manimScenes import * # Uncomment this with manim installed
+# from includes.manimScenes import * # Uncomment this with manim installed
+
+import matplotlib.pyplot as plt
 
 # Example Function
 def example():
@@ -77,7 +79,7 @@ def example():
 
 def main():
   example() # You can read code to better understand the workflow
-  
+
 
   ## Uncomment these with manim installed
   # sim_time = 10 # Time simulation is calculated Over

@@ -1,6 +1,4 @@
-# from manimlib import *
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Class Definition
 class CelestialBody:
